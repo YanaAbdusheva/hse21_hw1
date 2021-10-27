@@ -56,7 +56,7 @@ multiqc -o trimmed_multiqc trimmed_fastqc
 
 ![image](https://user-images.githubusercontent.com/93256219/139110718-e28af320-f379-49de-a9e5-a673a509cce9.png)
 
-После:
+После (уменьшилась длина последовательностей, процент GC у paired-end подрос):
 
 ![image1](https://user-images.githubusercontent.com/93256219/139110930-a350973c-1794-4863-8c35-8f9301113d7c.png)
 
