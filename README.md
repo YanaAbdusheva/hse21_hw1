@@ -12,7 +12,7 @@ seqtk sample -s1116 oil_R2.fastq 5000000 > pe_R2.fastq
 seqtk sample -s1116 oilMP_S4_L001_R1_001.fastq 1500000 > mp_R1.fastq
 seqtk sample -s1116 oilMP_S4_L001_R2_001.fastq 1500000 > mp_R2.fastq
 ```
-3. Удаляем исходные файлы:
+3. Удаляем исходные ненужные файлы:
 ```
 rm -r oil_R1.fastq
 rm -r oil_R2.fastq
@@ -39,7 +39,7 @@ rm pe_R2.fastq
 rm mp_R1.fastq
 rm mp_R2.fastq
 ```
-7. Оценка качества подрезанных чтений и получение по ним общей статистики с помощью программы fastQC и multiQC :
+7. Оценка качества подрезанных чтений и получение по ним общей статистики с помощью программ fastQC и multiQC :
 ```
 mkdir trimmed_fastq
 mv -v *trimmed trimmed_fastq/
@@ -81,7 +81,7 @@ multiqc -o trimmed_multiqc trimmed_fastqc
 ```
 time platanus assemble -o Poil -f trimmed_fastq/pe_R1.fastq.trimmed trimmed_fastq/pe_R2.fastq.trimmed 2> assemble.log
 ```
-9. С помощью “ platanus scaffold” собрали скаффолды из контигов, а также из подрезанных чтений:
+9. С помощью “ platanus scaffold” собрираем скаффолды из контигов, а также из подрезанных чтений:
 ```
 time platanus scaffold -o Poil -c Poil_contig.fa -IP1 trimmed_fastq/pe_R1.fastq.trimmed  trimmed_fastq/pe_R2.fastq.trimmed -OP2 trimmed_fastq/mp_R1.fastq.int_trimmed trimmed_fastq/mp_R2.fastq.int_trimmed 2> scaffold.log
 ```
@@ -96,7 +96,7 @@ time platanus scaffold -o Poil -c Poil_contig.fa -IP1 trimmed_fastq/pe_R1.fastq.
 
 ![image8](https://user-images.githubusercontent.com/93256219/139113978-f0448897-fa7d-42bd-a2db-d46d1c4f9ada.png)
 
-12. Выделим самый длинный скаффолд в отдельный файл:
+12. Выделяем самый длинный скаффолд в отдельный файл:
 ```
 echo scaffold1_len3834580_cov231 > name_scaff.txt
 seqtk subseq Poil_scaffold.fa name_scaff.txt > BigScaff.fna
