@@ -95,3 +95,23 @@ time platanus scaffold -o Poil -c Poil_contig.fa -IP1 trimmed_fastq/pe_R1.fastq.
 11. Анализ полученных скаффолдов (общее кол-во скаффолдов, их общая длина, длина самого длинного скаффолда, N50):
 
 ![image8](https://user-images.githubusercontent.com/93256219/139113978-f0448897-fa7d-42bd-a2db-d46d1c4f9ada.png)
+
+12. Выделим самый длинный скаффолд в отдельный файл:
+```
+echo scaffold1_len3834580_cov231 > name_scaff.txt
+seqtk subseq Poil_scaffold.fa name_scaff.txt > BigScaff.fna
+rm -r name_scaff.txt
+```
+13. С помощью “ platanus gap_close” уменьшаем количество гэпов с помощью подрезанных чтений:
+```
+time platanus gap_close -o Poil -c Poil_scaffold.fa -IP1 trimmed_fastq/pe_R1.fastq.trimmed  trimmed_fastq/pe_R2.fastq.trimmed -OP2 trimmed_fastq/mp_R1.fastq.int_trimmed trimmed_fastq/mp_R2.fastq.int_trimmed 2> gapclose.log
+```
+14. Снова вытаскиваем самый длинный скаффолд: 
+```
+echo scaffold1_cov231 > name_scaff.txt
+seqtk subseq Poil_gapClosed.fa name_scaff.txt > longest.fna
+rm -r name_scaff.txt
+```
+15.  Анализ самого длинного скаффолда (количество гэпов и их общая длина для самого длинного скаффолда):
+
+![image9](https://user-images.githubusercontent.com/93256219/139114779-5e2fb00e-46a8-4bdd-bdb3-c01ac8afdd1e.png)
