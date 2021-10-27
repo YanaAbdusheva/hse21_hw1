@@ -86,8 +86,11 @@ time platanus assemble -o Poil -f trimmed_fastq/pe_R1.fastq.trimmed trimmed_fast
 time platanus scaffold -o Poil -c Poil_contig.fa -IP1 trimmed_fastq/pe_R1.fastq.trimmed  trimmed_fastq/pe_R2.fastq.trimmed -OP2 trimmed_fastq/mp_R1.fastq.int_trimmed trimmed_fastq/mp_R2.fastq.int_trimmed 2> scaffold.log
 ```
 10. Анализ полученных контигов (общее кол-во контигов, их общая длина, длина самого длинного контига, N50):
+
 Ссылка на Google сolab: https://colab.research.google.com/drive/1viUQAWn_mpBJv_8UFUJnaTOKZHvS5UKj?usp=sharing
-![image7](https://user-images.githubusercontent.com/93256219/139113812-c1b204bb-b146-4297-9511-18afa7959d02.png)
+
+![image7](https://user-images.githubusercontent.com/93256219/139114254-a9905819-0f7d-4d02-8898-ac2f6cb3f0ad.png)
+
 
 11. Анализ полученных скаффолдов (общее кол-во скаффолдов, их общая длина, длина самого длинного скаффолда, N50):
 
