@@ -77,3 +77,18 @@ multiqc -o trimmed_multiqc trimmed_fastqc
 
 ![image6](https://user-images.githubusercontent.com/93256219/139112540-60877e91-d162-4e19-803c-35b26c47df35.png)
 
+8. С помощью “platanus assemble” собираем контиги из подрезанных чтений:
+```
+time platanus assemble -o Poil -f trimmed_fastq/pe_R1.fastq.trimmed trimmed_fastq/pe_R2.fastq.trimmed 2> assemble.log
+```
+9. С помощью “ platanus scaffold” собрали скаффолды из контигов, а также из подрезанных чтений:
+```
+time platanus scaffold -o Poil -c Poil_contig.fa -IP1 trimmed_fastq/pe_R1.fastq.trimmed  trimmed_fastq/pe_R2.fastq.trimmed -OP2 trimmed_fastq/mp_R1.fastq.int_trimmed trimmed_fastq/mp_R2.fastq.int_trimmed 2> scaffold.log
+```
+10. Анализ полученных контигов (общее кол-во контигов, их общая длина, длина самого длинного контига, N50):
+Ссылка на Google сolab: https://colab.research.google.com/drive/1viUQAWn_mpBJv_8UFUJnaTOKZHvS5UKj?usp=sharing
+![image7](https://user-images.githubusercontent.com/93256219/139113812-c1b204bb-b146-4297-9511-18afa7959d02.png)
+
+11. Анализ полученных скаффолдов (общее кол-во скаффолдов, их общая длина, длина самого длинного скаффолда, N50):
+
+![image8](https://user-images.githubusercontent.com/93256219/139113978-f0448897-fa7d-42bd-a2db-d46d1c4f9ada.png)
