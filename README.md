@@ -53,3 +53,6 @@ mkdir trimmed_multiqc
 multiqc -o trimmed_multiqc trimmed_fastqc
 ```
 До:
+![image](https://user-images.githubusercontent.com/93256219/139110718-e28af320-f379-49de-a9e5-a673a509cce9.png)
+
+
