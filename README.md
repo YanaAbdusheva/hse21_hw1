@@ -61,3 +61,19 @@ multiqc -o trimmed_multiqc trimmed_fastqc
 ![image1](https://user-images.githubusercontent.com/93256219/139110930-a350973c-1794-4863-8c35-8f9301113d7c.png)
 
 
+До:
+
+![image3](https://user-images.githubusercontent.com/93256219/139112046-21dc1576-0af6-4add-a8e5-edbac3b68268.png)
+
+После (улучшилось качество чтений):
+
+![image4](https://user-images.githubusercontent.com/93256219/139112203-6623ea86-9d66-4649-9838-b3ad7b7ee20a.png)
+
+До:
+
+![image5](https://user-images.githubusercontent.com/93256219/139112515-4264efee-4a7c-4a4d-849b-ed1f6cf33844.png)
+
+После (почти полностью были удалены адаптеры):
+
+![image6](https://user-images.githubusercontent.com/93256219/139112540-60877e91-d162-4e19-803c-35b26c47df35.png)
+
